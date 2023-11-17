@@ -45,13 +45,13 @@ M.mason = {
 
     -- Go
     -- "gopls",
+    --
     -- Rust
-    -- "rust-analyzer",
+    "rust-analyzer",
 
     -- Python
     "pyright",
     "black",
-
   },
 }
 
