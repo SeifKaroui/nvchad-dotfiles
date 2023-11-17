@@ -16,15 +16,15 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
+    -- dependencies = {
+    --   -- format & linting
+    --   {
+    --     "jose-elias-alvarez/null-ls.nvim",
+    --     config = function()
+    --       require "custom.configs.null-ls"
+    --     end,
+    --   },
+    -- },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -76,17 +76,17 @@ local plugins = {
   -- Tmux
   { "christoomey/vim-tmux-navigator", lazy = false },
   -- Rust
-  {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function()
-      return require "custom.configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
-    end,
-  },
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   ft = "rust",
+  --   dependencies = "neovim/nvim-lspconfig",
+  --   opts = function()
+  --     return require "custom.configs.rust-tools"
+  --   end,
+  --   config = function(_, opts)
+  --     require("rust-tools").setup(opts)
+  --   end,
+  -- },
   {
     "saecki/crates.nvim",
     ft = { "rust", "toml" },

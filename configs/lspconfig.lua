@@ -13,6 +13,7 @@ local servers = {
   "svelte",
   --[[  "dartls", ]]
   "gopls",
+  "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do

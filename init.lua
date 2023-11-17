@@ -7,7 +7,6 @@ local keymap = vim.keymap.set
 -- })
 vim.opt.linebreak = true
 
-
 -- autocmd("BufWritePost", {
 --   callback = function()
 --     local clients = vim.lsp.get_active_clients()
