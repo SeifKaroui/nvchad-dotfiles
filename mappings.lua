@@ -8,6 +8,24 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "window up" },
+    ["<leader>fm"] = {
+      function()
+        require("conform").format { async = true, lsp_fallback = true }
+      end,
+      "Format",
+    },
+    ["<leader>fd"] = {
+      "<cmd> FormatDisable <CR>",
+      "Disable Format All Buffers",
+    },
+    ["<leader>fr"] = {
+      "<cmd> FormaDisable! <CR>",
+      "Disable Format This Buffer",
+    },
+    ["<leader>fe"] = {
+      "<cmd> FormatEnable <CR>",
+      "Format Enable All Buffers",
+    },
   },
 }
 M.nvimtree = {

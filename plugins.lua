@@ -45,6 +45,20 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  -- Formatting
+  {
+    "stevearc/conform.nvim",
+    lazy = false,
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    keys = {
+      {
+        -- Customize or remove this keymap to your liking
+        "<leader>f",
+      },
+    },
+    opts = require "custom.configs.conform",
+  },
   {
     "folke/trouble.nvim",
     lazy = false,
@@ -54,15 +68,6 @@ local plugins = {
       require("core.utils").load_mappings "trouble"
     end,
   },
-
-  -- -- Harpoon
-  -- {
-  --   "theprimeagen/harpoon",
-  --   lazy = false,
-  --   config = function()
-  --     require "custom.configs.harpoon"
-  --   end,
-  -- },
 }
 
 return plugins

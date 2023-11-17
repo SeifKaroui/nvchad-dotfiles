@@ -1,29 +1,30 @@
-local autocmd = vim.api.nvim_create_autocmd
+-- local autocmd = vim.api.nvim_create_autocmd
 local keymap = vim.keymap.set
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+
 vim.opt.linebreak = true
 
--- autocmd("BufWritePost", {
---   callback = function()
---     local clients = vim.lsp.get_active_clients()
---     -- check if no lsp is active
---     if clients ~= nil then
---       -- check whether table empty or not
---       if type(clients) == "table" then
---         if next(clients) ~= nil then
---           vim.lsp.buf.format { async = true }
---         end
---       end
---     end
---   end,
--- })
+-- Conform Format Commands
+vim.api.nvim_create_user_command("FormatDisable", function(args)
+  if args.bang then
+    -- FormatDisable! will disable formatting just for this buffer
+    vim.b.disable_autoformat = true
+  else
+    vim.g.disable_autoformat = true
+  end
+end, {
+  desc = "Disable autoformat-on-save",
+  bang = true,
+})
 
+vim.api.nvim_create_user_command("FormatEnable", function()
+  vim.b.disable_autoformat = false
+  vim.g.disable_autoformat = false
+end, {
+  desc = "Re-enable autoformat-on-save",
+})
+
+--  Remaps
 local opts = { noremap = true, silent = true }
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
