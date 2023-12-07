@@ -15,6 +15,7 @@ M.treesitter = {
     "rust",
     -- "dart",
     "python",
+    -- Svelte
     "svelte",
   },
   indent = {
@@ -36,18 +37,21 @@ M.mason = {
     -- "html-lsp",
     -- "typescript-language-server",
     -- "deno",
-    -- "prettier",
-    -- "svelte-language-server",
+
+    "prettierd",
+    "prettier",
+    "svelte-language-server",
 
     -- c/cpp stuff
-    -- "clangd",
-    -- "clang-format",
+    "clangd",
+    "clang-format",
 
     -- Go
     -- "gopls",
     --
     -- Rust
     "rust-analyzer",
+    "rustfmt",
 
     -- Python
     "pyright",

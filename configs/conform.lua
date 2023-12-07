@@ -4,6 +4,10 @@ return {
     python = { "black" },
     -- Use a sub-list to run only the first available formatter
     javascript = { { "prettierd", "prettier" } },
+    svelte = { { "prettierd", "prettier" } },
+    rust = { "rustfmt" },
+    cpp = { "clang_format" },
+    -- c = { "clang_format" },
   },
   format_on_save = function(bufnr)
     -- Disable autoformat on certain filetypes

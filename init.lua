@@ -26,7 +26,7 @@ end, {
 --  Remaps
 local opts = { noremap = true, silent = true }
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<c-up>", ":resize -2<cr>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
@@ -45,10 +45,20 @@ keymap("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 -- copy to systel clipboard
 keymap({ "n", "v" }, "<leader>y", [["+y]])
-keymap("n", "<leader>Y", [["+Y]])
+keymap("n", "<leader>y", [["+y]])
 
 -- flutter-tools statusline
 function _G.statusLine()
   return vim.g.flutter_tools_decorations.app_version
 end
 vim.opt.statusline = "%!v:statusLine()"
+-- cp commands
+--
+keymap(
+  "n",
+  "<F1>",
+  "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inputs/%<.txt<CR>",
+  opts
+)
+
+keymap("n", "<F2>", "<ESC> :w <CR> :!g++ -DONPC  -o %< % && ./%< < inputs/%<.txt<CR>", opts)
